@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    首页
+{% endblock %}
+
+{% block body %}
+    {% block navbar %}
+{{ super() }}
+{% endblock %}
+
+    <div class="center-block" align="center" style="margin-top: auto">
+        <table class="table table-striped ">
+            <thead>
+                <tr>
+                    <th class="">项目名称</th>
+                    <th>项目介绍</th>
+                    <th>计划周期</th>
+                    <th>实际周期</th>
+                    <th>持续时间</th>
+                    <th>负责人</th>
+                    <th>投入人力</th>
+                    <th>每日投入人力</th>
+                    <th>测试策略</th>
+                    <th>日均用例</th>
+                    <th>执行总用例</th>
+                    <th>备注</th>
+                    <th>项目状态</th>
+                </tr>
+             {% for data in datas %}
+                <tr>
+                    <td>{{ data.prog_name }}</td>
+                    <td>{{ data.Prog_introduction }}</td>
+                    <td>{{ data.plan_time }}</td>
+                    <td>{{ data.real_time }}</td>
+                    <td>{{ data.spend_days }}</td>
+                    <td>{{ data.pic_guid }}</td>
+                    <td>{{ data.manpower }}</td>
+                    <td>{{ data.manpower_per_day }}</td>
+                    <td>{{ data.test_instruction }}</td>
+                    <td>{{ data.execTestCaseNum }}</td>
+                    <td>{{ data.etcn_average }}</td>
+                    <td>{{ data.remark }}</td>
+                    <td>{{ data.schedule }}</td>
+                </tr>
+             {% endfor %}
+            </thead>
+        </table>
+    </div>
+
+{% endblock %}

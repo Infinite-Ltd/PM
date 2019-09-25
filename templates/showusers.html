@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    首页
+{% endblock %}
+
+{% block body %}
+    {% block navbar %}
+{{ super() }}
+{% endblock %}
+    <div class="center-block" align="center" style="margin-top: 50px">
+        <table class="table table-striped ">
+            <thead>
+                <tr>
+                    <th class="">工号</th>
+                    <th>姓名</th>
+                    <th>组织机构</th>
+                    <th>是否是领导</th>
+                    <th>上级领导</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+             {% for data in datas %}
+                <tr>
+                    <td>{{ data.wid }}</td>
+                    <td>{{ data.name }}</td>
+                    <td>{{ data.org_name }}</td>
+                    <td>{{ data.isleader }}</td>
+                    <td>{{ data.dirleader }}</td>
+                    <td>{{ data.enabled }}</td>
+                    <td>
+                        <button class="btn-success" href="#">修改</button>
+                        <button class="btn-danger" style="margin-left: 5px" href="/user/delete">删除</button>
+                    </td>
+{#                    {% if data.enabled == '1' %}#}
+{#                        <td>在职</td>#}
+{#                    {% endif %}#}
+{#                    {% if data.enabled == '0' %}#}
+{#                        <td>离职</td>#}
+{#                    {% endif %}#}
+                </tr>
+             {% endfor %}
+            </thead>
+        </table>
+    </div>
+
+{% endblock %}

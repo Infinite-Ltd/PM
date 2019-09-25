@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <div class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">  <!--class="container"-->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle"
+                data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">CMS</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/templates/homepage.html">首页</a></li>
+                    <li><a href="/">工作打卡</a></li>
+                    <li><a href="/">任务分发</a></li>
+                    <li><a href="/">项目记录</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            促进交流
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">评审记录</a></li>
+                            <li><a href="#">培训记录</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">兴趣小组</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/">用例管理</a></li>
+                    <li><a href="/">版本管理</a></li>
+                    <li><a href="/">系统管理</a></li>
+
+                </ul>
+                <ul class="nav navbar-right navbar-nav">
+                    <li><a href="#about"><i class="glyphicon glyphicon-log-in"></i> login</a></li>
+                    <li><a href="#about"><i class="glyphicon glyphicon-log-out"></i> logoff</a></li>
+                    <li><a href="#about"><i class="glyphicon glyphicon-user"></i> register</a></li>
+                    <li><a href="#about"><i class="glyphicon glyphicon-cog"></i> setting</a></li>
+                    <li><a>Hello,{{ name }}!</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% block body %}
+    {% endblock %}
+</body>
+</html>

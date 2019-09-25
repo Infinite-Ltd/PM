@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    首页
+{% endblock %}
+
+{% block body %}
+    {% block navbar %}
+{{ super() }}
+{% endblock %}
+     <div class="form-inline" style="margin-top: 10px" >
+        <form class="form-search">
+            <label class="" style="margin-left: 30px" >培训名称&nbsp;</label>
+            <input type="text" style="margin-left: 5px" name="train_name" class="form-control">
+            <label class="" style="margin-left: 30px" >培训人工号&nbsp;</label>
+            <input type="text" style="margin-left: 5px" name="pic_wid" class="form-control">
+            <input type="submit" style="margin-left: 30px" class="btn btn-default" value="查询">
+            <a class="btn btn-info btn-lg" style="float: right;margin-right: 20px" data-toggle="modal" href="/training/add" data-target='myModel'>新增</a>
+        </form>
+    </div>
+    <hr>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    </div>
+    <div class="center-block" align="center" style="margin-top: 10px;margin-right: 20px;margin-left: 20px">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>培训名称</th>
+                    <th>培训内容</th>
+                    <th>培训时间</th>
+                    <th>主讲人</th>
+                    <th>备注</th>
+                    <th>操作</th>
+                </tr>
+             {% for data in datas %}
+                <tr>
+                    <td>{{ data.train_name }}</td>
+                    <td>{{ data.train_content }}</td>
+                    <td>{{ data.train_time }}</td>
+                    <td>{{ data.pic_name }}</td>
+                    <td>{{ data.remarks }}</td>
+                    <td>
+                        <button class="btn-success" href="#">修改</button>
+                        <button class="btn-danger" style="margin-left: 5px" href="/user/delete">删除</button>
+                    </td>
+{#                    {% if data.enabled == '1' %}#}
+{#                        <td>在职</td>#}
+{#                    {% endif %}#}
+{#                    {% if data.enabled == '0' %}#}
+{#                        <td>离职</td>#}
+{#                    {% endif %}#}
+                </tr>
+             {% endfor %}
+            </thead>
+        </table>
+    </div>
+
+{% endblock %}

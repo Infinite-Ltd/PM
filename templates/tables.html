@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+{#        <link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css">#}
+{#        <link rel="stylesheet" href="/static/bootstrap-table-master/dist/bootstrap-table.min.css">#}
+{#      <script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>#}
+{#         <link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js">#}
+{#     <link rel="stylesheet" href="/static/bootstrap-table-master/dist/bootstrap-table.min.js">#}
+{#    <link rel="stylesheet" href="/static/bootstrap-table-master/src/locale/bootstrap-table-zh-CN.js">#}
+
+
+    <!-- 引入bootstrap样式 -->
+<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+<!-- 引入bootstrap-table样式 -->
+<link href="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.css" rel="stylesheet">
+
+<!-- jquery -->
+<script src="/static/js/jquery-3.3.1.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+
+<!-- bootstrap-table.min.js -->
+<script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+<!-- 引入中文语言包 -->
+<script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
+
+</head>
+{% block title %}
+    首页
+{% endblock %}
+
+{% block body %}
+    {% block navbar %}
+        {{ super() }}
+    {% endblock %}
+<h1 class="col-md-offset-1">welcome</h1>
+<div class="col-md-5">
+<table  id="table">
+
+</table>
+</div>
+  <script>
+
+       const abc = $('#table');
+            abc.bootstrapTable({
+                method: 'post',
+                url:'/query',
+                columns: [
+                    { field: '字段一',
+                    title: '标题一'},
+                      { field: '字段二',
+                    title: '标题二'},
+                ]
+            });
+  </script>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'bootstrap/base.html'  %}
+{% import "bootstrap/wtf.html" as wtfs %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+    <div class="page-header container">
+        <h1>新建{{ title }}</h1>
+    </div>
+
+    <div class="container"  style="width: 480px;height: 400px;border: 1px;">
+        <div class="container"  style="width: 480px;height: 400px;border: 1px;">
+        {% if modle == 'user' %}
+                {{ wtfs.quick_form(form, action='') }}
+        {% endif %}
+
+        {% if modle == 'org' %}
+                {{ wtfs.quick_form(form, action='') }}
+        {% endif %}
+
+        {% if modle == 'training' %}
+                {{ wtfs.quick_form(form, action='') }}
+        {% endif %}
+
+        {% if modle == 'review'%}
+                {{ wtfs.quick_form(form, action='') }}
+        {% endif %}
+
+        {% if modle == 'program' %}
+                {{ wtfs.quick_form(form, action='') }}
+        {% endif %}
+
+        {% if modle == 'plan' %}
+                {{ wtfs.quick_form(form, action='') }}
+        {% endif %}
+
+        {% if modle == 'testcase' %}
+                {{ wtfs.quick_form(form, action='') }}
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,58 @@
+
+{% extends "bootstrap/base.html" %}
+
+<head>
+   <link href="/static/css/bootstrap.min.css" rel="stylesheet" />
+   <link href="/static/css/bootstrap-theme.min.css" rel="stylesheet" />
+   <link href="https://cdn.bootcss.com/flat-ui/2.3.0/css/flat-ui.min.css" rel="stylesheet">
+</head>
+{% block title %} PMS {% endblock %}
+{% block body%}
+{% block navbar %}
+    <div class="navbar navbar-inverse" role="navigation"  style="height: 50px">
+        <div class="container-fluid">  <!--class="container"-->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle"
+                data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">CMS</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/home">首页</a></li>
+                    <li><a href="/">工作打卡</a></li>
+                    <li><a href="/">任务分发</a></li>
+                    <li><a href="/program/showall">项目记录</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            促进交流
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">评审记录</a></li>
+                            <li><a href="#">培训记录</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">兴趣小组</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/">用例管理</a></li>
+                    <li><a href="/">版本管理</a></li>
+                    <li><a href="/user/queryall">用户管理</a></li>
+                </ul>
+                <ul class="nav navbar-right navbar-nav">
+                    <li><a href="/login"><i class="glyphicon glyphicon-log-in"></i> login</a></li>
+                    <li><a href="#about"><i class="glyphicon glyphicon-log-out"></i> logoff</a></li>
+                    <li><a href="/register"><i class="glyphicon glyphicon-user"></i> register</a></li>
+                    <li><a href="#about"><i class="glyphicon glyphicon-cog"></i> setting</a></li>
+{#                    <li><a>Hello,{{ name }}!</a></li>#}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% endblock %}
+
